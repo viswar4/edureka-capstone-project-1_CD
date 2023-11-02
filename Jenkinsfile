@@ -1,6 +1,5 @@
 pipeline{
     agent any
-    }
     environment{
         DOCKER_HUB_CREDENTIALS = 'dockerhub'
         DOCKER_IMAGE_NAME = 'viswar4/edureka-project1'
@@ -20,3 +19,4 @@ pipeline{
             }
     }
     }
+}
