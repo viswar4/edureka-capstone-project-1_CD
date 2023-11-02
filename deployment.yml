@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edureka-capstone-project
+  labels:
+    app: abctechnologies
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webapp
+      name: abctechnologies
+  template:
+    metadata:
+      labels:
+        app: webapp
+        name: abctechnologies 
+    spec:
+      containers:
+        - name: abctechnologies
+          image: viswar4/edureka-capstone-project1:v1
+          resources:
+            requests:
+              memory: "32Mi"
+              cpu: "256m"
+            limits:
+              memory: "64Mi"
+              cpu: "512m"
+          ports:
+          - containerPort: 8080
